@@ -31,6 +31,28 @@ class LinkedList:
             self.head = new_node
         else: 
             self.tail.set_next(new_node)
-            self.tail = new_node
-            self.length += 1
+        self.tail = new_node
+        self.length += 1
+
+    def remove_head(self):
+        if self.head is None:
+            return None
+        elif self.head == self.tail:
+            value = self.head.get_value()
+            self.head = None
+            self.tail = None
+            self.length =- 1
+            return value
+
+        else: 
+            value = self.head.get_value()
+            self.head = self.head.get_next()
+            self.length -= 1
+            return value
+
+
+    def remove_tail(self):
+        pass
+
+    def contains(self, value):
 
